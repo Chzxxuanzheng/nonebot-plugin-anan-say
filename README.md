@@ -19,6 +19,9 @@ _✨ 安安的素描本上都写了什么呢？ ✨_
 </a>
 <img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
 
+<b>本插件仅供学习交流使用，请勿用于其他用途
+版权争议请提出 issue 协商</b>
+
 </div>
 
 一个向安安的素描本上渲染文字并发送出去的插件
@@ -78,6 +81,31 @@ _✨ 安安的素描本上都写了什么呢？ ✨_
 | anan_say_min_font_size | 否 | 40 | 最小字号 |
 | anan_say_font_path | 否 | 无 | 自定义字体路径(默认思源黑体) |
 | anan_say_library_mode | 否 | False | 库模式 |
+
+<details>
+<summary>库模式</summary>
+请您在对nonebot插件开发有一定了解后再看。
+
+不同人的bot有自己不同的插件管理方式，或者指令格式规范。单纯写死on_command无法满足不同bot的客制化需求。
+如果您也有这种客制化需求，请将`anan_say_library_mode`设置为`True`。然后在您的插件里引入一下代码来进行渲染。
+
+```python
+require('nonebot_plugin_anan_say')
+from nonebot_plugin_anan_say.render import render
+```
+render函数用法:
+
+|参数|类型|作用|
+|:--:|:-:|:--:|
+|txt|str|要渲染的文本|
+|max_font_size|int|最大字号|
+|min_font_size|int|最小字号|
+|fontpath|str|字体路径|
+
+返回值为`PIL.Image.Image`对象
+
+~~真会有人用这东西吗？用得上的大佬基本上都自己写插件，不会考虑引入第三方的吧...~~
+</details>
 
 ## 🎉 使用
 ### 指令表
