@@ -4,10 +4,11 @@ from typing import Optional
 from .typing import Cmd, LineInfo, TagMap
 from pathlib import Path
 
-BOOK_LEFT = 339
-BOOK_TOP = 885
-BOOK_WIDTH = 655
-BOOK_HEIGHT = 330
+BOOK_LEFT = 320
+BOOK_TOP = 875
+BOOK_WIDTH = 675
+BOOK_HEIGHT = 350
+PADDING = 20
 
 ANAN_PATH = Path(__file__).parent / 'anan.png'
 
@@ -214,7 +215,6 @@ def render_rich_text_to_image(
 	font = ImageFont.truetype(fontpath, font_size)
 	for line in line_infos:
 		current_x = (range[0] - line['width']) // 2
-
 		for cmd in line['content']:
 			# 处理标签命令
 			if cmd['type'] == 'mode':
@@ -266,12 +266,22 @@ def render(txt: str, max_font_size: int, min_font_size: int, fontpath: str) -> O
 	'''
 	# 解析命令
 	cmds = parse_commands(txt)
-	book_range = (BOOK_WIDTH, BOOK_HEIGHT)
 
 	# 寻找合适字号
-	font_size, line_infos = find_font_size(cmds, max_font_size, min_font_size, book_range, fontpath)
+	font_size, line_infos = find_font_size(
+		cmds,
+		max_font_size,
+		min_font_size,
+		(BOOK_WIDTH - PADDING * 2, BOOK_HEIGHT - PADDING * 2),
+		fontpath
+	)
 	if not line_infos: return None
-	img = render_rich_text_to_image(line_infos, font_size, book_range, fontpath)
+	img = render_rich_text_to_image(
+		line_infos,
+		font_size,
+		(BOOK_WIDTH, BOOK_HEIGHT),
+		fontpath
+	)
 	bg = Image.open(ANAN_PATH)
 	bg.paste(img, (BOOK_LEFT, BOOK_TOP), img)
 	return bg
