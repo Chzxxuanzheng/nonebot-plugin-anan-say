@@ -2,6 +2,8 @@ from nonebot.plugin import PluginMetadata
 
 from .config import Config, config
 
+from nonebot_plugin_alconna import __supported_adapters__
+
 __plugin_meta__ = PluginMetadata(
     name="安安说",
     description="一个向安安的素描本上渲染文字并发送出去的插件",
@@ -14,6 +16,8 @@ __plugin_meta__ = PluginMetadata(
 
     config=Config,
     # 插件配置项类，如无需配置可不填写。
+
+	supported_adapters=__supported_adapters__
 )
 
 
