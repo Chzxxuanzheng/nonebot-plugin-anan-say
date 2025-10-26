@@ -174,3 +174,7 @@ pyrightconfig.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
+
+# uv
+.python-version
+uv.lock
