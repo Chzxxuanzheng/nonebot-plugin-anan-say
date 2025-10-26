@@ -1,7 +1,9 @@
 from nonebot.plugin import PluginMetadata
 
 from .config import Config, config
+from nonebot import require
 
+require("nonebot_plugin_alconna")
 from nonebot_plugin_alconna import __supported_adapters__
 
 __plugin_meta__ = PluginMetadata(

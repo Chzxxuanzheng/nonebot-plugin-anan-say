@@ -1,7 +1,7 @@
-from nonebot import on_command, require
+from nonebot import on_command
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
-require("nonebot_plugin_alconna")
+
 from nonebot_plugin_alconna.uniseg import UniMessage
 
 from io import BytesIO
