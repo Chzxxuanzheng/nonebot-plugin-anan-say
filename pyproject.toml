@@ -6,11 +6,11 @@ authors = [
     {name = "Mr.Lee", email = "chzxxuanzheng@gmail.com"},
 ]
 dependencies = [
-    "nonebot-plugin-alconna>=0.59.4",
+    "nonebot-plugin-alconna>=0.60.2",
     "nonebot2>=2.4.3",
     "pillow>=11.3.0",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "agpl"}
 

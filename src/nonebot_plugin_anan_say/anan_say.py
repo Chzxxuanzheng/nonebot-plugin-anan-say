@@ -29,8 +29,10 @@ async def main(content: Message = CommandArg()):
 
 	buf = BytesIO()
 	img.save(buf, format='PNG')
-
-	await UniMessage.image(raw=buf.getvalue()).send()
+	await UniMessage.image(
+		raw=buf.getvalue(),
+		sticker=config.anan_say_sticker
+	).send()
 
 def draw(data: str):
 	return render(

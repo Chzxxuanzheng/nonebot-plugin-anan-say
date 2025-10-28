@@ -10,6 +10,8 @@ class Config(BaseModel):
 	''' 最小字体大小 '''
 	anan_say_font_path: Optional[str] = None
 	''' 字体文件路径，留空则使用默认字体 '''
+	anan_say_sticker: bool = True
+	''' 以动画表情发送 '''
 
 	anan_say_library_mode: bool = False
 	''' 库模式 '''

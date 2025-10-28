@@ -79,6 +79,7 @@ _✨ 安安的素描本上都写了什么呢？ ✨_
 |:-----:|:----:|:----:|:----:|
 | anan_say_max_font_size | 否 | 200 | 最大字号 |
 | anan_say_min_font_size | 否 | 40 | 最小字号 |
+| anan_say_sticker | 否 | True | 作为表情发送 |
 | anan_say_font_path | 否 | 无 | 自定义字体路径(默认思源黑体) |
 | anan_say_library_mode | 否 | False | 库模式 |
 
