@@ -2,7 +2,7 @@ from nonebot import on_command
 from nonebot.adapters import Message
 from nonebot.params import CommandArg
 
-from nonebot_plugin_alconna.uniseg import UniMessage
+from nonebot_plugin_alconna.uniseg import UniMessage, Image
 
 from io import BytesIO
 from pathlib import Path
@@ -29,9 +29,8 @@ async def main(content: Message = CommandArg()):
 
 	buf = BytesIO()
 	img.save(buf, format='PNG')
-	await UniMessage.image(
-		raw=buf.getvalue(),
-		sticker=config.anan_say_sticker
+	await UniMessage(
+		Image(raw=buf.getvalue())('[图片]')
 	).send()
 
 def draw(data: str):
