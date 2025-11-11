@@ -1,6 +1,6 @@
 [project]
 name = "nonebot_plugin_anan_say"
-version = "0.1.3"
+version = "0.1.4"
 description = "一个向安安的素描本上渲染文字并发送出去的插件"
 authors = [
     {name = "Mr.Lee", email = "chzxxuanzheng@gmail.com"},
