@@ -1,8 +1,9 @@
-from nonebot.plugin import PluginMetadata
+from nonebot.plugin import PluginMetadata, inherit_supported_adapters
+
+from nonebot import require
+require('nonebot_plugin_alconna')
 
 from .config import Config, config
-
-from .adapter_check import get_supported_adapters
 
 __plugin_meta__ = PluginMetadata(
 	name="安安说",
@@ -15,9 +16,8 @@ __plugin_meta__ = PluginMetadata(
 	# 发布必填。
 
 	config=Config,
-	# 插件配置项类，如无需配置可不填写。
 
-	supported_adapters=get_supported_adapters()
+	supported_adapters=inherit_supported_adapters('nonebot_plugin_alconna')
 )
 
 
